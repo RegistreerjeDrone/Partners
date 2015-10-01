@@ -13,7 +13,7 @@ class RegistreerDrone{
 								$email = "", 
 								$telefoon = "", 
 								$straat = "", 
-								$huisnummer = 0, 
+								$huisnummer = "0", 
 								$postcode1 = "", 
 								$postcode2 = "", 
 								$stad = "", 
