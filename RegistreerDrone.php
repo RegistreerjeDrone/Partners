@@ -2,8 +2,8 @@
 namespace RegistreerJeDrone;
 
 class RegistreerDrone{
-	const partnerID = "";
-	const partnerPW = "";
+	const partnerID = "Test";
+	const partnerPW = "Test123";
 	const https_server = "https://registreerjedrone.nl/assets/php/formSubmit/partnerRegister.php";
 	const https_header = "Content-Type: application/x-www-form-urlencoded". PHP_EOL;
 
@@ -13,7 +13,7 @@ class RegistreerDrone{
 								$email = "", 
 								$telefoon = "", 
 								$straat = "", 
-								$huisnummer = "0", 
+								$huisnummer = 0, 
 								$postcode1 = "", 
 								$postcode2 = "", 
 								$stad = "", 
@@ -73,7 +73,7 @@ class RegistreerDrone{
 EOT;
 		$result 		= file_get_contents(self::https_server, false, stream_context_create(array('http'=>array('method'=>'POST','header'=>self::https_header,'content'=>http_build_query(array("json"=>$jsonData)),'timeout'=>60))));
 
-		return array("code" => 1, "message" => "Registration has been sent");
+		return json_decode($result, true);
 	}
 }
 ?>
