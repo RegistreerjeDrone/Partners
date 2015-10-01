@@ -27,7 +27,7 @@ class RegistreerDrone{
 		$this->telefoon 		= $telefoon;
 		$this->straat 			= $straat;
 		$this->huisNummer 		= $huisnummer;
-		$this->postcod1 		= $postcode1;
+		$this->postcode1 		= $postcode1;
 		$this->stad 			= $stad;
 		$this->provincie 		= $provincie;
 		$this->land 			= $land;
