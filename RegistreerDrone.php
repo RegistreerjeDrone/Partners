@@ -2,10 +2,10 @@
 namespace RegistreerJeDrone;
 
 class RegistreerDrone{
-	const $partnerID = "";
-	const $partnerPW = "";
-	const $https_server = "https://registreerjedrone.nl/assets/php/formSubmit/partnerRegister.php";
-	const $https_header = "Content-Type: application/x-www-form-urlencoded". PHP_EOL;
+	const partnerID = "";
+	const partnerPW = "";
+	const https_server = "https://registreerjedrone.nl/assets/php/formSubmit/partnerRegister.php";
+	const https_header = "Content-Type: application/x-www-form-urlencoded". PHP_EOL;
 
 	public function __construct($voorNaam = "", 
 								$tussenVoegsel = "",
@@ -25,8 +25,18 @@ class RegistreerDrone{
 		$this->achterNaam 		= $achterNaam;
 		$this->email 			= $email;
 		$this->telefoon 		= $telefoon;
+			
+		if(preg_match('/((\D)+)((\d)+)/', $straat, $match)){
+			$straat 			= trim($match[1]);
+			$huisnummer 		= trim($match[3]);
+		}
+		
 		$this->straat 			= $straat;
 		$this->huisNummer 		= $huisnummer;
+		if(preg_match("/^([1-9][0-9]{3})[\s]?([A-Za-z]{2})$/i", $postcode1, $match)){
+			$postcode1 			= $match[1];
+			$postcode2 			= $match[2];
+		}
 		$this->postcode1 		= $postcode1;
 		$this->stad 			= $stad;
 		$this->provincie 		= $provincie;
