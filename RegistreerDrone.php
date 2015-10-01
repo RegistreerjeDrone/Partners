@@ -40,7 +40,7 @@ class RegistreerDrone{
 	}
 	public function sendRegistration(){
 		if(count($this->drones) == 0){
-			return "You need to add a drone first";
+			return array("code" => -1, "message" => "You need to add a drone first");
 		}
 
 		$voorNaam 		= $this->voorNaam;
@@ -62,6 +62,8 @@ class RegistreerDrone{
 {"partner":{"id":"$partnerID","pass":"$partnerPW"},"name":{"first":"$voorNaam","middle":"$tussenVoegsel","last":"$achterNaam"},"email":"$email","phone":"$telefoonNummer","address":{"street":"$straat","number":"$huisnummer","zip":"$postCode1","zip2":"$postCode2","city":"$stad","province":"$provincie","country":"$land"},"drone":$drones}
 EOT;
 		$result 		= file_get_contents(self::https_server, false, stream_context_create(array('http'=>array('method'=>'POST','header'=>self::https_header,'content'=>http_build_query(array("json"=>$jsonData)),'timeout'=>60))));
+
+		return array("code" => 1, "message" => "Registration has been sent");
 	}
 }
 ?>
