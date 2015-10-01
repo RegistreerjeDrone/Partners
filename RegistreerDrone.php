@@ -2,8 +2,8 @@
 namespace RegistreerJeDrone;
 
 class RegistreerDrone{
-	const partnerID = "Test";
-	const partnerPW = "Test123";
+	const partnerID = "";
+	const partnerPW = "";
 	const https_server = "https://registreerjedrone.nl/assets/php/formSubmit/partnerRegister.php";
 	const https_header = "Content-Type: application/x-www-form-urlencoded". PHP_EOL;
 
