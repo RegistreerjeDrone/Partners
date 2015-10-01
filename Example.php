@@ -8,7 +8,7 @@ $regDrone = new \RegistreerJeDrone\RegistreerDrone( "Voornaam",
                                                     "klant@email.nl", 
                                                     "+31 Telefoon", 
                                                     "Straat",
-                                                    11, //Huisnummer
+                                                    "11", //Huisnummer
                                                     "1111", //Deel 1 van Nederlands postcode, of gehele deel van Belgische postcode
                                                     "AA", //Deel 2 van Nederlands postcode, of leeg voor Belgische klant
                                                     "Stad",
